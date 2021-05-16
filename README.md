@@ -10,6 +10,10 @@ LogPanel 适用于 aspnetcore 2.x - aspnetcore5.x 项目, 采用 aspnetcore`中�
 
 前端主要采用 Bootstrap（4.6）和 jQuery（3.6）。
 
+# 演示地址
+
+[Log-Panel](http://niux-logpanel-demo.669.icu/logpanel)
+
 # 快速开始
 
 > Install-Package NiuX.LogPanel
