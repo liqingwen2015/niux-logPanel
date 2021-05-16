@@ -1,0 +1,125 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1</TargetFrameworks>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<RootNamespace>NiuX.LogPanel</RootNamespace>
+		<Platforms>AnyCPU;x64</Platforms>
+		<LangVersion>latest</LangVersion>
+		<AssemblyVersion>0.1.0.0</AssemblyVersion>
+		<FileVersion>0.1.0.0</FileVersion>
+		<Authors>wen</Authors>
+		<Description>一个日志面板，帮助开发人员排查项目运行中出现错误时快速查看日志排查问题</Description>
+		<PackageProjectUrl>https://github.com/liqingwen2015/niux-logPanel</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/liqingwen2015/niux-logPanel</RepositoryUrl>
+		<Version>0.1.0.0</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="wwwroot\css\*.css" />
+		<None Remove="wwwroot\css\**\*.css" />
+		<None Remove="wwwroot\js\*.js" />
+		<None Remove="wwwroot\js\**\*.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\css\\**\*" />
+		<EmbeddedResource Include="wwwroot\js\\**\*" />
+		<EmbeddedResource Include="Views\\**\*" />
+		<EmbeddedResource Include="wwwroot\font\\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Remove="Views\Home\Basic.cshtml" />
+		<EmbeddedResource Remove="Views\Home\Detail.cshtml" />
+		<EmbeddedResource Remove="Views\Home\Index.cshtml" />
+		<EmbeddedResource Remove="Views\Home\LogList.cshtml" />
+		<EmbeddedResource Remove="Views\Home\TraceLogList.cshtml" />
+		<EmbeddedResource Remove="Views\RazorPage.cs" />
+		<EmbeddedResource Remove="Views\_layout.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="wwwroot\css\fontawesome-webfont .woff2" />
+		<None Remove="wwwroot\css\fontawesome-webfont.ttf" />
+		<None Remove="wwwroot\css\fontawesome-webfont.woff" />
+		<None Remove="wwwroot\css\fontawesome-webfont.woff2" />
+		<None Remove="wwwroot\css\Simple-Line-Icons.ttf" />
+		<None Remove="wwwroot\css\Simple-Line-Icons.woff" />
+		<None Remove="wwwroot\css\Simple-Line-Icons.woff2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.0.90" />
+		<PackageReference Include="DapperExtensions.Standard" Version="1.1.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="NiuX.Extensions" Version="0.0.4" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Views\Home\Basic.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Basic.cshtml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\Home\Index.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Index.cshtml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\Home\Detail.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Detail.cshtml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\Home\LogList.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>LogList.cshtml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\Home\TraceLogList.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>TraceLogList.cshtml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\_layout.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>_layout.cshtml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Views\Home\Basic.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>Basic.generated.cs</LastGenOutput>
+		</None>
+		<None Update="Views\Home\Index.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>Index.generated.cs</LastGenOutput>
+		</None>
+		<None Update="Views\Home\Detail.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>Detail.generated.cs</LastGenOutput>
+		</None>
+		<None Update="Views\Home\LogList.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>LogList.generated.cs</LastGenOutput>
+		</None>
+		<None Update="Views\Home\TraceLogList.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>TraceLogList.generated.cs</LastGenOutput>
+		</None>
+		<None Update="Views\_layout.cshtml">
+			<Generator>RazorGenerator</Generator>
+			<LastGenOutput>_layout.generated.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>
