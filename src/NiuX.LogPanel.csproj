@@ -8,14 +8,15 @@
 		<RootNamespace>NiuX.LogPanel</RootNamespace>
 		<Platforms>AnyCPU;x64</Platforms>
 		<LangVersion>latest</LangVersion>
-		<AssemblyVersion>0.1.0.0</AssemblyVersion>
-		<FileVersion>0.1.0.0</FileVersion>
+		<AssemblyVersion>0.1.0.1</AssemblyVersion>
+		<FileVersion>0.1.0.1</FileVersion>
 		<Authors>wen</Authors>
 		<Description>一个日志面板，帮助开发人员排查项目运行中出现错误时快速查看日志排查问题</Description>
 		<PackageProjectUrl>https://github.com/liqingwen2015/niux-logPanel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/liqingwen2015/niux-logPanel</RepositoryUrl>
-		<Version>0.1.0.0</Version>
+		<Version>0.1.0.1</Version>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageLicenseFile>README.md</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,6 +24,10 @@
 		<None Remove="wwwroot\css\**\*.css" />
 		<None Remove="wwwroot\js\*.js" />
 		<None Remove="wwwroot\js\**\*.js" />
+		<None Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath></PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
