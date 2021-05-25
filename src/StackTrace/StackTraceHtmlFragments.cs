@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -91,7 +92,12 @@ namespace NiuX.LogPanel.StackTrace
 
         public static IEnumerable<T> Format<T>(string text, IStackTraceFormatter<T> formatter)
         {
-            Debug.Assert(text != null);
+            if (text.IsNullOrEmpty())
+            {
+                return default;
+            }
+            
+            //Debug.Assert(text != null);
 
             var frames = StackTraceParser.Parse
             (

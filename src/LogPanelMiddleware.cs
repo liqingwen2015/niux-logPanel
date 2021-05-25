@@ -75,7 +75,7 @@ namespace NiuX.LogPanel
             //Activate Controller
             var controllerType = Assembly.GetAssembly(typeof(ILogPanelHandler)).GetTypes().First(x => x.Name.StartsWith(router.Controller + "Controller"));
 
-            if (!(scope.ServiceProvider.GetRequiredService(controllerType.MakeGenericType(opts.LogModelType)) is ILogPanelHandler handler))
+            if (scope.ServiceProvider.GetRequiredService(controllerType.MakeGenericType(opts.LogModelType)) is not ILogPanelHandler handler)
             {
                 httpContext.Response.StatusCode = 404;
                 return;
@@ -113,7 +113,7 @@ namespace NiuX.LogPanel
                         // ReSharper disable once PossibleInvalidOperationException
                         var bytes = new byte[(int)httpContext.Request.ContentLength];
                         await httpContext.Request.Body.ReadAsync(bytes, 0, (int)httpContext.Request.ContentLength);
-                        string requestJson = Encoding.Default.GetString(bytes);
+                        var requestJson = Encoding.Default.GetString(bytes);
 
                         args = JsonConvert.DeserializeObject(requestJson, method.GetParameters().First().ParameterType);
 

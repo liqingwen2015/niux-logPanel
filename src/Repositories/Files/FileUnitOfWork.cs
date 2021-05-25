@@ -145,10 +145,10 @@ namespace NiuX.LogPanel.Repositories.Files
                         };
 
                         var lineEnd = Math.Min(_options.CustomPropertyInfos.Count, line.Length - 5);
-                        if (line.Length - 5 != _options.CustomPropertyInfos.Count && logLine == logLines.Last())
-                        {
-                            _logs.Add(CreateWarnItem(id, $"Warn: {Path.GetFileName(logFile.Path)} 文件内容与自定义日志模型不完全匹配,请检查代码!"));
-                        }
+                        //if (line.Length - 5 != _options.CustomPropertyInfos.Count && logLine == logLines.Last())
+                        //{
+                        //    _logs.Add(CreateWarnItem(id, $"Warn: {Path.GetFileName(logFile.Path)} 文件内容与自定义日志模型不完全匹配,请检查代码!"));
+                        //}
 
                         for (var i = 0; i < lineEnd; i++)
                         {
